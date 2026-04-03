@@ -2,16 +2,36 @@ import React, { useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useLayoutEffect } from 'react';
-import { Github, ExternalLink, Brain, HeartPulse, Cpu } from 'lucide-react';
+import { Github, ExternalLink, Brain, HeartPulse, Cpu, Zap } from 'lucide-react';
 
 // Project Thumbnails
 import aiAdvisorImg from '../../assets/projects/ai-advisor.png';
 import medicalChatbotImg from '../../assets/projects/medical-chatbot.png';
 import iotMonitoringImg from '../../assets/projects/iot-monitoring.png';
+import energizeHackathonImg from '../../assets/projects/energize-hackathon.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const PROJECTS = [
+  {
+    id: 'energize-2026-hackathon',
+    image: energizeHackathonImg,
+    icon: <Zap size={26} />,
+    iconColor: '#06b6d4',
+    iconBg: 'rgba(6,182,212,0.18)',
+    title: 'Energize 2026',
+    subtitle: 'Event Website',
+    description:
+      'A premium, high-performance website built for an upcoming hackathon. Features a highly optimized 3D Digital Twin dashboard using Three.js, GSAP-driven micro-animations, magnetic hover effects, and a custom audio-player initialization pattern.',
+    tags: ['React', 'Three.js', 'GSAP', 'Tailwind'],
+    tagClass: 'tech-pill tech-pill-cyan',
+    github: 'https://github.com/barath0508',
+    demo: 'https://energize2026.vercel.app',
+    badge: 'Event · 3D Web',
+    badgeColor: 'rgba(6,182,212,0.15)',
+    badgeBorder: 'rgba(6,182,212,0.25)',
+    accentGradient: 'linear-gradient(135deg, rgba(6,182,212,0.14) 0%, rgba(124,58,237,0.05) 100%)',
+  },
   {
     id: 'ai-academic-advisor',
     image: aiAdvisorImg,
@@ -44,7 +64,7 @@ const PROJECTS = [
     tags: ['Python', 'NLP', 'Flask', 'Node.js', 'HTML/CSS', 'ML'],
     tagClass: 'tech-pill tech-pill-cyan',
     github: 'https://github.com/barath0508',
-    demo: null,
+    demo: 'https://medicode4.netlify.app',
     badge: 'NLP · Healthcare',
     badgeColor: 'rgba(6,182,212,0.15)',
     badgeBorder: 'rgba(6,182,212,0.25)',
@@ -63,7 +83,7 @@ const PROJECTS = [
     tags: ['Arduino', 'C', 'GPS', 'IR Sensors', 'Firebase', 'IoT Design'],
     tagClass: 'tech-pill',
     github: 'https://github.com/barath0508',
-    demo: null,
+    demo: 'https://mini-project25.netlify.app',
     badge: 'IoT · Hardware',
     badgeColor: 'rgba(129,140,248,0.15)',
     badgeBorder: 'rgba(129,140,248,0.25)',
