@@ -122,6 +122,32 @@ const Hero = () => {
         .from('.hero-socials',  { opacity: 0, x: -15, duration: 0.5, ease: 'power2.out' }, '-=0.2')
         .from('.hero-visual',   { opacity: 0, x: 50, scale: 0.88, duration: 1.1, ease: 'power3.out' }, '<-0.9');
 
+      // Magnetic effect for buttons
+      const magneticBtns = document.querySelectorAll('.magnetic-btn');
+      magneticBtns.forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+          const rect = btn.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+          
+          gsap.to(btn, {
+            x: x * 0.35,
+            y: y * 0.35,
+            duration: 0.4,
+            ease: 'power2.out'
+          });
+        });
+
+        btn.addEventListener('mouseleave', () => {
+          gsap.to(btn, {
+            x: 0,
+            y: 0,
+            duration: 0.6,
+            ease: 'elastic.out(1, 0.3)'
+          });
+        });
+      });
+
       // Subtle parallax on scroll
       gsap.to('.hero-content-left', {
         y: -60, ease: 'none',
@@ -202,7 +228,7 @@ const Hero = () => {
               href="#projects"
               onClick={scrollToProjects}
               id="hero-view-projects-btn"
-              className="hero-cta inline-flex items-center gap-2 px-7 py-4 bg-primary text-white font-bold text-sm rounded-lg hover:bg-primary-dark hover:shadow-[0_0_32px_rgba(124,58,237,0.45)] hover:-translate-y-0.5 transition-all duration-300 uppercase tracking-wide"
+              className="hero-cta magnetic-btn inline-flex items-center gap-2 px-7 py-4 bg-primary text-white font-bold text-sm rounded-lg hover:bg-primary-dark hover:shadow-[0_0_32px_rgba(124,58,237,0.45)] transition-all duration-300 uppercase tracking-wide"
             >
               <Code2 size={16} />
               View Projects
@@ -210,7 +236,7 @@ const Hero = () => {
             <a
               href="mailto:barath5727@gmail.com"
               id="hero-hire-me-btn"
-              className="hero-cta inline-flex items-center gap-2 px-7 py-4 border border-primary/35 text-primary-light font-bold text-sm rounded-lg hover:bg-primary/10 hover:border-primary/60 hover:-translate-y-0.5 transition-all duration-300 uppercase tracking-wide"
+              className="hero-cta magnetic-btn inline-flex items-center gap-2 px-7 py-4 border border-primary/35 text-primary-light font-bold text-sm rounded-lg hover:bg-primary/10 hover:border-primary/60 transition-all duration-300 uppercase tracking-wide"
             >
               <Mail size={16} />
               Hire Me

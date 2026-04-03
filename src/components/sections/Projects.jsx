@@ -4,11 +4,17 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useLayoutEffect } from 'react';
 import { Github, ExternalLink, Brain, HeartPulse, Cpu } from 'lucide-react';
 
+// Project Thumbnails
+import aiAdvisorImg from '../../assets/projects/ai-advisor.png';
+import medicalChatbotImg from '../../assets/projects/medical-chatbot.png';
+import iotMonitoringImg from '../../assets/projects/iot-monitoring.png';
+
 gsap.registerPlugin(ScrollTrigger);
 
 const PROJECTS = [
   {
     id: 'ai-academic-advisor',
+    image: aiAdvisorImg,
     icon: <Brain size={26} />,
     iconColor: '#a78bfa',
     iconBg: 'rgba(124,58,237,0.18)',
@@ -27,6 +33,7 @@ const PROJECTS = [
   },
   {
     id: 'medical-advisor-chatbot',
+    image: medicalChatbotImg,
     icon: <HeartPulse size={26} />,
     iconColor: '#67e8f9',
     iconBg: 'rgba(6,182,212,0.18)',
@@ -45,6 +52,7 @@ const PROJECTS = [
   },
   {
     id: 'iot-monitoring',
+    image: iotMonitoringImg,
     icon: <Cpu size={26} />,
     iconColor: '#a78bfa',
     iconBg: 'rgba(129,140,248,0.18)',
@@ -74,34 +82,45 @@ const ProjectCard = ({ project, index }) => {
       onMouseLeave={() => setHovered(false)}
       id={`project-card-${project.id}`}
     >
-      {/* Card top accent banner */}
-      <div
-        className="h-1.5 w-full"
-        style={{ background: project.accentGradient, opacity: hovered ? 1 : 0.6, transition: 'opacity 0.3s' }}
-      />
-
-      <div className="p-7 flex flex-col flex-1 gap-5">
-        {/* Header row */}
-        <div className="flex items-start justify-between">
-          <div className="flex items-center gap-3">
-            <div
-              className="w-12 h-12 rounded-xl flex items-center justify-center transition-transform duration-300"
-              style={{ background: project.iconBg, color: project.iconColor, transform: hovered ? 'scale(1.1) rotate(-4deg)' : 'scale(1) rotate(0deg)' }}
-            >
-              {project.icon}
-            </div>
-            <div>
-              <h3 className="font-display font-bold text-white text-lg leading-tight">{project.title}</h3>
-              <p className="text-zinc-500 text-xs mt-0.5">{project.subtitle}</p>
-            </div>
-          </div>
-          {/* Badge */}
+      {/* Card Visual / Thumbnail */}
+      <div className="project-image-container">
+        <img
+          src={project.image}
+          alt={project.title}
+          className="project-image"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent z-10" />
+        
+        {/* Floating badge over image */}
+        <div className="absolute top-4 right-4 z-20">
           <span
-            className="text-[10px] font-mono font-semibold px-2.5 py-1 rounded-full whitespace-nowrap"
-            style={{ background: project.badgeColor, border: `1px solid ${project.badgeBorder}`, color: project.iconColor }}
+            className="text-[10px] font-mono font-bold px-3 py-1.5 rounded-full backdrop-blur-md border shadow-lg"
+            style={{ background: project.badgeColor, borderColor: project.badgeBorder, color: 'white' }}
           >
             {project.badge}
           </span>
+        </div>
+      </div>
+
+      <div className="p-7 pt-5 flex flex-col flex-1 gap-5">
+        {/* Header row */}
+        <div className="flex items-start justify-between">
+          <div className="flex items-center gap-4">
+            <div
+              className="w-12 h-12 rounded-xl flex items-center justify-center border border-white/10 shadow-inner overflow-hidden relative"
+              style={{ background: project.iconBg, color: project.iconColor }}
+            >
+              <div className="absolute inset-0 bg-white/5" />
+              <div className="relative z-10 transition-transform duration-500" style={{ transform: hovered ? 'scale(1.1) rotate(-5deg)' : 'scale(1)' }}>
+                {project.icon}
+              </div>
+            </div>
+            <div>
+              <h3 className="font-display font-black text-white text-xl leading-tight tracking-tight group-hover:text-primary-light transition-colors">{project.title}</h3>
+              <p className="text-zinc-500 text-xs mt-0.5 font-medium">{project.subtitle}</p>
+            </div>
+          </div>
         </div>
 
         {/* Description */}

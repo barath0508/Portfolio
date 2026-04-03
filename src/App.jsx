@@ -37,13 +37,21 @@ function App() {
 
     gsap.ticker.lagSmoothing(0);
 
-    setTimeout(() => {
-      ScrollTrigger.refresh();
-    }, 500);
+    // Refresh ScrollTrigger periodically for the first few seconds
+    // to account for dynamic image loading and layout shifts
+    const intervals = [100, 500, 1000, 2000, 3000].map(time => 
+      setTimeout(() => ScrollTrigger.refresh(), time)
+    );
+
+    // Also refresh on window load
+    const handleLoad = () => ScrollTrigger.refresh();
+    window.addEventListener('load', handleLoad);
 
     return () => {
       lenis.destroy();
       gsap.ticker.remove(lenis.raf);
+      intervals.forEach(clearTimeout);
+      window.removeEventListener('load', handleLoad);
     };
   }, []);
 

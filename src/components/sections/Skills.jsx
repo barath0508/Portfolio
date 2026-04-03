@@ -93,21 +93,30 @@ const Skills = () => {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.skills-heading', {
-        opacity: 0, y: 40, duration: 0.9, ease: 'power3.out',
-        scrollTrigger: { trigger: '.skills-heading', start: 'top 85%' },
-      });
+      gsap.fromTo('.skills-heading', 
+        { opacity: 0, y: 40 },
+        {
+          opacity: 1, y: 0, duration: 0.9, ease: 'power3.out',
+          scrollTrigger: { trigger: '.skills-heading', start: 'top 85%' },
+        }
+      );
 
-      gsap.from('.skills-card', {
-        opacity: 0, y: 40, scale: 0.94,
-        duration: 0.65, stagger: 0.1, ease: 'power3.out',
-        scrollTrigger: { trigger: '.skills-grid', start: 'top 78%' },
-      });
+      gsap.fromTo('.skills-card', 
+        { opacity: 0, y: 40, scale: 0.94 },
+        {
+          opacity: 1, y: 0, scale: 1,
+          duration: 0.65, stagger: 0.1, ease: 'power3.out',
+          scrollTrigger: { trigger: '.skills-grid', start: 'top 85%' },
+        }
+      );
 
-      gsap.from('.skills-marquee', {
-        opacity: 0, duration: 1, ease: 'power2.out',
-        scrollTrigger: { trigger: '.skills-marquee', start: 'top 90%' },
-      });
+      gsap.fromTo('.skills-marquee', 
+        { opacity: 0 },
+        {
+          opacity: 1, duration: 1, ease: 'power2.out',
+          scrollTrigger: { trigger: '.skills-marquee', start: 'top 90%' },
+        }
+      );
     }, sectionRef);
 
     return () => ctx.revert();

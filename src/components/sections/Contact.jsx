@@ -34,7 +34,7 @@ const CONTACT_LINKS = [
     icon: <Linkedin size={22} />,
     label: 'LinkedIn',
     value: 'Connect with me',
-    href: '#',
+    href: 'https://www.linkedin.com/in/barath-r-12773432b/',
     color: '#67e8f9',
     bg: 'rgba(6,182,212,0.12)',
     border: 'rgba(6,182,212,0.20)',

@@ -109,46 +109,45 @@ const GlobalBackground = () => {
 
   return (
     <>
+      {/* Mesh Gradient Background */}
+      <div className="mesh-gradient" />
+
       {/* Particle canvas */}
       <canvas
         ref={canvasRef}
         className="fixed inset-0 z-0 pointer-events-none"
-        style={{ opacity: 0.65 }}
+        style={{ opacity: 0.45 }}
       />
 
       {/* Ambient gradient orbs */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
         <div
-          className="absolute top-[-15%] right-[-5%] w-[700px] h-[700px] rounded-full pointer-events-none"
-          style={{ background: 'radial-gradient(circle, rgba(124,58,237,0.10) 0%, transparent 65%)', filter: 'blur(4px)' }}
+          className="absolute top-[-10%] right-[-5%] w-[800px] h-[800px] rounded-full pointer-events-none"
+          style={{ background: 'radial-gradient(circle, rgba(124,58,237,0.12) 0%, transparent 70%)', filter: 'blur(60px)' }}
         />
         <div
-          className="absolute bottom-[-20%] left-[-8%] w-[550px] h-[550px] rounded-full pointer-events-none"
-          style={{ background: 'radial-gradient(circle, rgba(6,182,212,0.07) 0%, transparent 65%)', filter: 'blur(4px)' }}
-        />
-        <div
-          className="absolute top-[50%] left-[40%] w-[350px] h-[350px] rounded-full pointer-events-none"
-          style={{ background: 'radial-gradient(circle, rgba(129,140,248,0.05) 0%, transparent 65%)' }}
+          className="absolute bottom-[-15%] left-[-10%] w-[600px] h-[600px] rounded-full pointer-events-none"
+          style={{ background: 'radial-gradient(circle, rgba(6,182,212,0.08) 0%, transparent 70%)', filter: 'blur(60px)' }}
         />
       </div>
 
       {/* Grid overlay */}
-      <div className="fixed inset-0 z-0 pointer-events-none grid-overlay" style={{ opacity: 0.35 }} />
+      <div className="fixed inset-0 z-0 pointer-events-none grid-overlay" style={{ opacity: 0.25 }} />
 
       {/* Scrolling watermark text */}
-      <div className="fixed top-1/2 -translate-y-1/2 left-0 right-0 z-0 pointer-events-none overflow-hidden opacity-[0.025] select-none flex will-change-transform">
+      <div className="fixed top-1/2 -translate-y-1/2 left-0 right-0 z-0 pointer-events-none overflow-hidden opacity-[0.015] select-none flex will-change-transform">
         <div
-          className="whitespace-nowrap flex font-display font-black text-[14vw] tracking-tighter text-white animate-marquee leading-none"
+          className="whitespace-nowrap flex font-display font-black text-[12vw] tracking-tighter text-white animate-marquee leading-none"
           style={{ width: 'max-content' }}
         >
           <span className="px-10">BARATH</span>
-          <span className="px-10" style={{ WebkitTextStroke: '2px white', color: 'transparent' }}>DEV</span>
+          <span className="px-10" style={{ WebkitTextStroke: '1px white', color: 'transparent' }}>DEV</span>
           <span className="px-10">CODE</span>
-          <span className="px-10" style={{ WebkitTextStroke: '2px white', color: 'transparent' }}>BUILD</span>
+          <span className="px-10" style={{ WebkitTextStroke: '1px white', color: 'transparent' }}>BUILD</span>
           <span className="px-10">BARATH</span>
-          <span className="px-10" style={{ WebkitTextStroke: '2px white', color: 'transparent' }}>DEV</span>
+          <span className="px-10" style={{ WebkitTextStroke: '1px white', color: 'transparent' }}>DEV</span>
           <span className="px-10">CODE</span>
-          <span className="px-10" style={{ WebkitTextStroke: '2px white', color: 'transparent' }}>BUILD</span>
+          <span className="px-10" style={{ WebkitTextStroke: '1px white', color: 'transparent' }}>BUILD</span>
         </div>
       </div>
 
