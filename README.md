@@ -69,13 +69,20 @@ Beyond individual software engineering, I serve as **Webmaster and Core Member**
 
 ## 🛠️ Technical Toolkit
 
-- **Languages**: TypeScript, JavaScript (ESNext), Python, C, Verilog HDL, SQL
-- **Frontend**: Next.js 16, React.js, Tailwind CSS, HTML5, CSS3, GSAP, Framer Motion
-- **3D & Creative Tech**: Three.js, React Three Fiber (R3F), WebGL, Canvas API, Web Audio API
-- **Backend & Cloud**: Node.js, Express.js, Flask, Supabase, Firebase, RESTful APIs
-- **Performance & Privacy**: WebAssembly (WASM), Web Workers, Client-Side Buffer Processing
-- **Embedded & Hardware**: Arduino, ESP32, Altera FPGA, Digital Logic Design, GPS & IR Sensors
-- **Tools & Ecosystem**: Git, GitHub Actions, Vercel, Postman, VS Code, ModelSim, Altera Quartus
+### 🔌 Hardware & Embedded Systems (ECE Core)
+- **FPGA & RTL Design**: Verilog HDL, Altera Quartus Prime, ModelSim, Finite State Machines (FSM), RTL Synthesis, Clock Dividers, Timing Constraints
+- **Microcontrollers & SoC**: Arduino (Uno, Nano, Mega), ESP32 (Wi-Fi/BLE), Raspberry Pi, Embedded C, GPIO/PWM, Hardware Interrupts
+- **Hardware Protocols**: UART, I2C, SPI Bus, MQTT IoT Protocol, ESP-NOW, RS-232, Serial Stream Telemetry
+- **Sensors & Actuators**: GPS Modules (NEO-6M), IR Sensors, Ultrasonic Transducers, LDR & Solar Photovoltaics, Stepper & Servo Motors, Relays, ADC/DAC
+- **Lab Instrumentation & CAD**: Digital Storage Oscilloscope (DSO), Multimeter Diagnostics, Proteus Simulation, Multisim Circuit Analysis, Breadboard Prototyping
+
+### 💻 Software, AI & Cloud Engineering
+- **Languages**: TypeScript, JavaScript (ESNext), Python, C, SQL
+- **Frontend & 3D Web**: Next.js 16, React.js, Three.js, React Three Fiber (R3F), Tailwind CSS, GSAP, WebGL, Web Audio API
+- **Backend & Cloud**: Node.js, Express.js, Flask, Supabase Real-time, Firebase, REST APIs
+- **Performance & Security**: WebAssembly (WASM), Web Workers, In-Memory Client-side Data Processing
+- **AI / ML & Vision**: Predictive ML Models, Tesseract OCR, NLP Tokenization & Classification, Data Pipelines
+- **Tools & Ecosystem**: Git, GitHub Actions, Vercel, Postman, VS Code, ModelSim, Altera Quartus Prime
 
 ---
 

@@ -5,6 +5,7 @@ import { Terminal, X, Minimize2, Maximize2, CornerDownLeft, Sparkles, ExternalLi
 const HELP_COMMANDS = [
   { cmd: 'help', desc: 'List all available terminal commands' },
   { cmd: 'whoami', desc: 'Display Barath\'s engineering bio and background' },
+  { cmd: 'hardware', desc: 'Display ECE hardware, FPGA & embedded systems matrix' },
   { cmd: 'projects', desc: 'List all flagship and deployed projects with links' },
   { cmd: 'skills', desc: 'Display full technology matrix (Web, AI, Hardware)' },
   { cmd: 'stats', desc: 'Show developer statistics and metrics' },
@@ -126,6 +127,37 @@ const TerminalModal = ({ isOpen, onClose }) => {
                       </a>
                     </div>
                   ))}
+                </div>
+              </div>
+            ),
+          };
+          break;
+
+        case 'hardware':
+          responseEntry = {
+            type: 'output',
+            content: (
+              <div className="space-y-2.5 my-2 text-xs">
+                <p className="text-secondary font-semibold flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
+                  ECE HARDWARE & EMBEDDED SYSTEMS STACK:
+                </p>
+                <div className="space-y-1.5 text-zinc-300">
+                  <p>
+                    <span className="text-primary-light font-bold">FPGA & RTL Design:</span> Verilog HDL, Altera Quartus Prime, ModelSim, FSM Architecture, RTL Synthesis, Clock Dividers, Timing Constraints
+                  </p>
+                  <p>
+                    <span className="text-secondary font-bold">Microcontrollers & SoC:</span> Arduino (Uno, Nano, Mega), ESP32 (Wi-Fi/BLE), Raspberry Pi, Embedded C, GPIO/PWM, Timer Interrupts
+                  </p>
+                  <p>
+                    <span className="text-accent font-bold">Hardware Protocols:</span> UART, I2C, SPI Bus, MQTT IoT Telemetry, ESP-NOW, RS-232, Serial Stream Buffering
+                  </p>
+                  <p>
+                    <span className="text-primary-light font-bold">Sensors & Actuators:</span> GPS Modules (NEO-6M), IR Sensors, Ultrasonic Transducers, LDR / Solar Photovoltaics, Stepper/Servo Motors, Relay Drivers, ADC/DAC
+                  </p>
+                  <p>
+                    <span className="text-secondary font-bold">Lab Instrumentation:</span> Digital Oscilloscope (DSO), Multimeter Diagnostics, Proteus Simulation, Multisim Circuit Analysis, Breadboard Prototyping
+                  </p>
                 </div>
               </div>
             ),
@@ -320,7 +352,7 @@ const TerminalModal = ({ isOpen, onClose }) => {
             <div className="px-4 py-2 bg-surface/50 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-zinc-500 overflow-x-auto gap-2">
               <div className="flex items-center gap-2">
                 <span>Quick:</span>
-                {['help', 'projects', 'skills', 'whoami', 'stats', 'clear'].map((cmd) => (
+                {['help', 'hardware', 'projects', 'skills', 'whoami', 'stats', 'clear'].map((cmd) => (
                   <button
                     key={cmd}
                     onClick={() => {
