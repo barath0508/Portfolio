@@ -127,7 +127,7 @@ const Education = () => {
               <div className="grid sm:grid-cols-2 gap-4 mb-6 pb-6 border-b border-white/8">
                 <div className="flex items-center gap-2.5 text-zinc-300 text-xs sm:text-sm">
                   <Calendar size={15} className="text-primary-light shrink-0" />
-                  <span>2024 – 2028 <span className="text-secondary font-semibold">(2nd Year)</span></span>
+                  <span>2024 – 2028 <span className="text-secondary font-semibold">(3rd Year)</span></span>
                 </div>
                 <div className="flex items-center gap-2.5 text-zinc-300 text-xs sm:text-sm">
                   <MapPin size={15} className="text-secondary shrink-0" />

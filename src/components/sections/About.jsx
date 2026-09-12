@@ -9,7 +9,7 @@ const STATS = [
   { value: '56+', label: 'GitHub Repositories', icon: <Code2 size={20} className="text-primary-light" /> },
   { value: '37+', label: 'Client-Side Tools Built', icon: <Zap size={20} className="text-secondary" /> },
   { value: '8+', label: 'Live Deployed Systems', icon: <Globe size={20} className="text-accent" /> },
-  { value: '2nd', label: 'Year ECE @ RIT Chennai', icon: <GraduationCap size={20} className="text-primary-light" /> },
+  { value: '3rd', label: 'Year ECE @ RIT Chennai', icon: <GraduationCap size={20} className="text-primary-light" /> },
 ];
 
 const About = () => {
@@ -84,7 +84,7 @@ const About = () => {
           {/* Left — Bio */}
           <div className="about-text-block space-y-5">
             <p className="text-zinc-200 text-base md:text-lg leading-relaxed">
-              Hi, I'm <span className="text-primary-light font-bold">Barath R</span> — an Electronics and Communication Engineering undergraduate at{' '}
+              Hi, I'm <span className="text-primary-light font-bold">Barath R</span> — a third-year Electronics and Communication Engineering undergraduate at{' '}
               <span className="text-secondary font-semibold">Rajalakshmi Institute of Technology, Chennai</span> with an intense drive for creating production-ready digital products.
             </p>
             <p className="text-zinc-400 text-sm md:text-base leading-relaxed">

@@ -84,7 +84,7 @@ const TerminalModal = ({ isOpen, onClose }) => {
             content: (
               <div className="space-y-1.5 text-xs text-zinc-300 my-2 leading-relaxed">
                 <p>
-                  <strong className="text-white">Barath R.</strong> — Electronics & Communication Engineering undergrad at{' '}
+                  <strong className="text-white">Barath R.</strong> — Third-year Electronics & Communication Engineering undergrad at{' '}
                   <span className="text-primary-light">Rajalakshmi Institute of Technology, Chennai</span>.
                 </p>
                 <p className="text-zinc-400">
@@ -92,6 +92,7 @@ const TerminalModal = ({ isOpen, onClose }) => {
                 </p>
                 <p className="text-secondary">✦ Webmaster & Core Member for IETE Student Forum RIT</p>
                 <p className="text-accent">✦ Core Team & Lead Developer for Energize 2026 Hackathon</p>
+                <p className="text-green-400">✦ Smart India Hackathon (SIH 2026) Hardware Team</p>
               </div>
             ),
           };
@@ -105,6 +106,7 @@ const TerminalModal = ({ isOpen, onClose }) => {
                 <p className="text-secondary font-semibold">FEATURED & PRODUCTION PROJECTS:</p>
                 <div className="space-y-1.5">
                   {[
+                    { name: 'Conformal Helmet Antenna', url: 'https://github.com/barath0508', desc: 'SIH 2026 — Dual-band (UHF/L-band) Ballistic Helmet Patch Array' },
                     { name: 'iCreatePDF', url: 'https://icreatepdf.online', desc: '100% Client-Side PDF suite (Next.js, WASM, 37+ tools)' },
                     { name: 'FlashESP', url: 'https://github.com/barath0508/Esp_Flash_Tool', desc: 'In-browser ESP32 Firmware Flasher & Monaco IDE (Web Serial API)' },
                     { name: 'Solar Tracker 3D', url: 'https://solar-tracker-pi-jade.vercel.app', desc: 'Real-time 3D Telemetry & IoT Dashboard (Three.js, Supabase)' },
@@ -159,7 +161,10 @@ const TerminalModal = ({ isOpen, onClose }) => {
                     <span className="text-primary-light font-bold">Sensors & Actuators:</span> GPS Modules (NEO-6M), IR Sensors, Ultrasonic Transducers, LDR / Solar Photovoltaics, Stepper/Servo Motors, Relay Drivers, ADC/DAC
                   </p>
                   <p>
-                    <span className="text-secondary font-bold">Lab Instrumentation:</span> Digital Oscilloscope (DSO), Multimeter Diagnostics, Proteus Simulation, Multisim Circuit Analysis, Breadboard Prototyping
+                    <span className="text-secondary font-bold">RF & Antenna Systems:</span> Conformal Microstrip Patch Arrays, Dual-band (UHF / L-band), RF Shielding (SAR Reduction), Ruggedized Coax Interfacing
+                  </p>
+                  <p>
+                    <span className="text-accent font-bold">Lab Instrumentation:</span> Digital Oscilloscope (DSO), Multimeter Diagnostics, Proteus Simulation, Multisim Circuit Analysis, Breadboard Prototyping
                   </p>
                 </div>
               </div>

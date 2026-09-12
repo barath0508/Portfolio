@@ -26,6 +26,7 @@ import ietePortalImg from '../../assets/projects/iete-rit.jpg';
 import qrloopImg from '../../assets/projects/qrloop.jpg';
 import flashespImg from '../../assets/projects/flashesp.jpg';
 import healthlinkImg from '../../assets/projects/healthlink.jpg';
+import conformalAntennaImg from '../../assets/projects/conformal-antenna.jpg';
 import energizeHackathonImg from '../../assets/projects/energize-hackathon.png';
 import aiAdvisorImg from '../../assets/projects/ai-advisor.png';
 import medicalChatbotImg from '../../assets/projects/medical-chatbot.png';
@@ -61,6 +62,34 @@ const PROJECTS = [
       'Over 37 document tools: Merge, split, compress, booklet imposition',
       'WebAssembly & Web Workers for sub-second in-memory processing',
       'Production deployment with custom domain (icreatepdf.online)',
+    ],
+  },
+  {
+    id: 'conformal-antenna-sih',
+    image: conformalAntennaImg,
+    icon: <Radio size={24} />,
+    iconColor: '#f59e0b',
+    iconBg: 'rgba(245,158,11,0.16)',
+    category: 'Hardware & Systems',
+    title: 'Conformal Helmet Antenna',
+    subtitle: 'Smart India Hackathon 2026',
+    description:
+      'A flexible microstrip patch antenna array embedded into ballistic helmets for NSG CQB/CT operations, replacing bulky whip antennas with dual-band UHF + L-band connectivity.',
+    detailedDescription:
+      'Engineered for Smart India Hackathon 2026, this defense hardware solution embeds a flexible conformal microstrip patch antenna array directly onto ballistic combat helmets for NSG (National Security Guard) Close Quarter Battle and Counter-Terrorism operations. Features dual-band (UHF + L-band) support for simultaneous tactical voice radio and high-definition helmet-camera video streaming, backed by a specialized RF shielding layer that reduces user radiation exposure (SAR) while directing beam directivity upward and outward. Connected via a ruggedized coax interface that preserves the helmet’s ballistic integrity.',
+    tags: ['RF & Antenna Design', 'Microstrip Patch Array', 'UHF + L-Band', 'EM Shielding', 'SIH 2026', 'Defense Tech'],
+    tagClass: 'tech-pill tech-pill-cyan',
+    github: 'https://github.com/barath0508',
+    demo: null,
+    badge: '● SIH 2026 · Defense RF',
+    badgeColor: 'rgba(245,158,11,0.18)',
+    badgeBorder: 'rgba(245,158,11,0.35)',
+    highlights: [
+      'Replaces bulky vest-mounted whip antennas prone to tactical snagging in CQB/CT operations',
+      'Dual-band RF support: UHF (tactical radio comms) + L-band (helmet-camera video link)',
+      'Integrated RF shielding layer minimizing user radiation exposure (SAR) to the head',
+      'Directional radiation pattern engineered upward and outward for maximized link range',
+      'Ruggedized coax interface seamlessly integrating without compromising helmet ballistic rating',
     ],
   },
   {

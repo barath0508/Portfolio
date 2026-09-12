@@ -21,7 +21,7 @@ const ROLES = [
   'Next.js & TypeScript Builder',
   'AI & ML Engineer',
   '3D Web & IoT Developer',
-  'ECE Undergrad @ RIT',
+  '3rd Year ECE Undergrad @ RIT',
 ];
 
 const useTypewriter = (texts, speed = 70, pause = 2000) => {
@@ -243,10 +243,10 @@ const Hero = () => {
 
           {/* Bio */}
           <p className="hero-bio text-sm sm:text-base md:text-lg text-zinc-400 max-w-xl leading-relaxed mb-7">
-            ECE undergraduate at <span className="text-secondary font-semibold">Rajalakshmi Institute of Technology</span> building at the frontier of{' '}
+            Third-year ECE undergraduate at <span className="text-secondary font-semibold">Rajalakshmi Institute of Technology</span> building at the frontier of{' '}
             <span className="text-primary-light font-semibold">full-stack web</span>,{' '}
             <span className="text-accent font-semibold">AI systems</span>, and{' '}
-            <span className="text-secondary font-semibold">IoT hardware</span>. Creator of privacy-first client-side web suites and interactive 3D telemetry dashboards.
+            <span className="text-secondary font-semibold">embedded hardware</span>. Creator of privacy-first client-side web suites and interactive 3D telemetry dashboards.
           </p>
 
           {/* CTA Buttons */}
