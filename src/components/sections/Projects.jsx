@@ -15,6 +15,7 @@ import {
   Info,
   Sparkles,
   ArrowUpRight,
+  Radio,
 } from 'lucide-react';
 import ProjectDetailModal from './ProjectDetailModal';
 
@@ -23,6 +24,8 @@ import icreatepdfImg from '../../assets/projects/icreatepdf.jpg';
 import solarTrackerImg from '../../assets/projects/solar-tracker.jpg';
 import ietePortalImg from '../../assets/projects/iete-rit.jpg';
 import qrloopImg from '../../assets/projects/qrloop.jpg';
+import flashespImg from '../../assets/projects/flashesp.jpg';
+import healthlinkImg from '../../assets/projects/healthlink.jpg';
 import energizeHackathonImg from '../../assets/projects/energize-hackathon.png';
 import aiAdvisorImg from '../../assets/projects/ai-advisor.png';
 import medicalChatbotImg from '../../assets/projects/medical-chatbot.png';
@@ -273,6 +276,87 @@ const PROJECTS = [
       'Ultra-fast instantaneous reactive client feedback',
       'Snappy developer-oriented UI with rich humor engine',
       'Built with Vite, React, and deployed on Vercel',
+    ],
+  },
+  {
+    id: 'flashesp',
+    image: flashespImg,
+    icon: <Cpu size={24} />,
+    iconColor: '#38bdf8',
+    iconBg: 'rgba(56,189,248,0.16)',
+    category: 'Hardware & Systems',
+    title: 'FlashESP',
+    subtitle: 'Web-based ESP32 Flasher & IDE',
+    description:
+      'Browser-based ESP32 firmware flasher using the Web Serial API and esptool-js with an integrated Monaco code editor and serial telemetry monitor.',
+    detailedDescription:
+      'FlashESP bridges hardware development directly into modern web browsers. Leveraging the Web Serial API and esptool-js, developers can compile, flash binary partitions to ESP32 DevKit boards, inspect serial baud rate telemetry, and edit firmware files in-browser via Monaco Editor without installing desktop driver toolchains.',
+    tags: ['Next.js', 'TypeScript', 'Web Serial API', 'esptool-js', 'Monaco Editor', 'ESP32', 'Supabase'],
+    tagClass: 'tech-pill tech-pill-cyan',
+    github: 'https://github.com/barath0508/Esp_Flash_Tool',
+    demo: null,
+    badge: '● Hardware + Web',
+    badgeColor: 'rgba(56,189,248,0.18)',
+    badgeBorder: 'rgba(56,189,248,0.35)',
+    highlights: [
+      'Direct in-browser microcontroller flashing via Web Serial API & esptool-js',
+      'Integrated Monaco Code Editor with syntax highlighting for C/C++ firmware',
+      'Real-time serial baud rate monitoring and telemetry terminal log',
+      'Engineered with Next.js, Radix UI, TypeScript, and Supabase cloud store',
+    ],
+  },
+  {
+    id: 'healthlink-gemini',
+    image: healthlinkImg,
+    icon: <HeartPulse size={24} />,
+    iconColor: '#10b981',
+    iconBg: 'rgba(16,185,129,0.16)',
+    category: 'AI / ML',
+    title: 'HealthLink',
+    subtitle: 'Gemini AI Health & Donor Network',
+    description:
+      'Digital healthcare platform connecting emergency blood donors, hospitals, and patients, powered by Google Gemini GenAI triage and Supabase.',
+    detailedDescription:
+      'HealthLink is a unified digital healthcare coordination platform. Incorporates Google Generative AI (Gemini) for instant emergency triage assistance, dynamic blood donor geolocation mapping, verified hospital bed directories, and QR prescription tracking.',
+    tags: ['React', 'TypeScript', 'Google Gemini AI', 'Supabase', 'QRCode', 'Tailwind CSS'],
+    tagClass: 'tech-pill',
+    github: 'https://github.com/barath0508/Health-Link',
+    demo: null,
+    badge: '● Gemini AI',
+    badgeColor: 'rgba(16,185,129,0.18)',
+    badgeBorder: 'rgba(16,185,129,0.35)',
+    highlights: [
+      'Integrated Google Gemini GenAI for emergency symptom triage and guidance',
+      'Real-time blood donor and hospital availability mapping',
+      'Dynamic QR code generation for medication and prescription verification',
+      'Engineered with Vite, React, TypeScript, and Supabase database',
+    ],
+  },
+  {
+    id: 'esp32-attendance',
+    image: iotMonitoringImg,
+    icon: <Radio size={24} />,
+    iconColor: '#a78bfa',
+    iconBg: 'rgba(124,58,237,0.18)',
+    category: 'Hardware & Systems',
+    title: 'ESP32 Smart Attendance',
+    subtitle: 'IoT Telemetry & Web Dashboard',
+    description:
+      'Automated campus attendance system utilizing ESP32 microcontrollers, Wi-Fi telemetry pipelines, and real-time cloud analytics dashboard.',
+    detailedDescription:
+      'An IoT smart attendance management station engineered with ESP32 Wi-Fi hardware modules. Transmits instant verification packets to cloud databases and renders real-time student check-in telemetry on a high-availability web dashboard.',
+    tags: ['ESP32', 'IoT Telemetry', 'Vercel', 'Embedded C', 'Hardware'],
+    tagClass: 'tech-pill',
+    github: 'https://github.com/barath0508/esp32-attendance',
+    demo: 'https://esp32-attendance.vercel.app',
+    badge: '● Live IoT',
+    badgeColor: 'rgba(124,58,237,0.2)',
+    badgeBorder: 'rgba(124,58,237,0.35)',
+    highlights: [
+      'Automated wireless attendance capture via ESP32 Wi-Fi microcontrollers',
+      'Real-time cloud database syncing with low latency',
+      'Live responsive telemetry dashboard deployed on Vercel',
+      'Hardware level debounce and LED status indicators',
     ],
   },
 ];

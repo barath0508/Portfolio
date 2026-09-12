@@ -106,9 +106,12 @@ const TerminalModal = ({ isOpen, onClose }) => {
                 <div className="space-y-1.5">
                   {[
                     { name: 'iCreatePDF', url: 'https://icreatepdf.online', desc: '100% Client-Side PDF suite (Next.js, WASM, 37+ tools)' },
+                    { name: 'FlashESP', url: 'https://github.com/barath0508/Esp_Flash_Tool', desc: 'In-browser ESP32 Firmware Flasher & Monaco IDE (Web Serial API)' },
                     { name: 'Solar Tracker 3D', url: 'https://solar-tracker-pi-jade.vercel.app', desc: 'Real-time 3D Telemetry & IoT Dashboard (Three.js, Supabase)' },
                     { name: 'IETE-RIT Official Portal', url: 'https://iete-rit.vercel.app', desc: 'Official Student Forum Portal (React, 3D Globe, GSAP)' },
+                    { name: 'HealthLink', url: 'https://github.com/barath0508/Health-Link', desc: 'Gemini AI Healthcare & Donor Coordination Platform' },
                     { name: 'QRLoop Analytics', url: 'https://qrloop-eight.vercel.app', desc: 'Dynamic QR Generator & Scan Analytics Platform' },
+                    { name: 'ESP32 Cloud Attendance', url: 'https://esp32-attendance.vercel.app', desc: 'Automated IoT Campus Attendance Dashboard' },
                     { name: 'Energize 2026', url: 'https://energize2026.vercel.app', desc: 'Hackathon 3D Digital Twin & Sound Architecture' },
                     { name: 'Medical Advisor Chatbot', url: 'https://medicode4.netlify.app', desc: 'NLP-powered Symptom Triage Healthcare Assistant' },
                   ].map((p) => (
