@@ -1,5 +1,45 @@
 import React, { useEffect, useRef } from 'react';
 
+class Particle {
+  constructor(canvas) {
+    this.canvas = canvas;
+    this.reset(true);
+  }
+  reset(initial = false) {
+    const w = this.canvas ? this.canvas.width : window.innerWidth;
+    const h = this.canvas ? this.canvas.height : window.innerHeight;
+    this.x = Math.random() * w;
+    this.y = initial ? Math.random() * h : h + 20;
+    this.size = Math.random() * 1.8 + 0.4;
+    this.speedY = -(Math.random() * 0.5 + 0.1);
+    this.speedX = (Math.random() - 0.5) * 0.25;
+    this.opacity = Math.random() * 0.55 + 0.1;
+    this.fadeSpeed = Math.random() * 0.0025 + 0.0008;
+    this.pulse = Math.random() * Math.PI * 2;
+    const r = Math.random();
+    if (r < 0.5) this.color = '124, 58, 237';
+    else if (r < 0.8) this.color = '129, 140, 248';
+    else this.color = '6, 182, 212';
+  }
+  update() {
+    this.y += this.speedY;
+    this.x += this.speedX;
+    this.pulse += 0.018;
+    this.opacity -= this.fadeSpeed;
+    if (this.opacity <= 0 || this.y < -10) this.reset();
+  }
+  draw(ctx) {
+    const glowOpacity = this.opacity * (0.7 + 0.3 * Math.sin(this.pulse));
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(${this.color}, ${glowOpacity})`;
+    ctx.shadowColor = `rgba(${this.color}, ${glowOpacity * 0.6})`;
+    ctx.shadowBlur = this.size * 8;
+    ctx.fill();
+    ctx.shadowBlur = 0;
+  }
+}
+
 const GlobalBackground = () => {
   const canvasRef = useRef(null);
   const cursorRef = useRef(null);
@@ -19,45 +59,9 @@ const GlobalBackground = () => {
     resize();
     window.addEventListener('resize', resize);
 
-    class Particle {
-      constructor() { this.reset(true); }
-      reset(initial = false) {
-        this.x = Math.random() * canvas.width;
-        this.y = initial ? Math.random() * canvas.height : canvas.height + 20;
-        this.size = Math.random() * 1.8 + 0.4;
-        this.speedY = -(Math.random() * 0.5 + 0.1);
-        this.speedX = (Math.random() - 0.5) * 0.25;
-        this.opacity = Math.random() * 0.55 + 0.1;
-        this.fadeSpeed = Math.random() * 0.0025 + 0.0008;
-        this.pulse = Math.random() * Math.PI * 2;
-        // violet, indigo, or cyan
-        const r = Math.random();
-        if (r < 0.5) this.color = '124, 58, 237';       // violet
-        else if (r < 0.8) this.color = '129, 140, 248';  // indigo/accent
-        else this.color = '6, 182, 212';                  // cyan
-      }
-      update() {
-        this.y += this.speedY;
-        this.x += this.speedX;
-        this.pulse += 0.018;
-        this.opacity -= this.fadeSpeed;
-        if (this.opacity <= 0 || this.y < -10) this.reset();
-      }
-      draw() {
-        const glowOpacity = this.opacity * (0.7 + 0.3 * Math.sin(this.pulse));
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${this.color}, ${glowOpacity})`;
-        ctx.shadowColor = `rgba(${this.color}, ${glowOpacity * 0.6})`;
-        ctx.shadowBlur = this.size * 8;
-        ctx.fill();
-        ctx.shadowBlur = 0;
-      }
-    }
-
     // Initialise 70 particles spread across the screen
     for (let i = 0; i < 70; i++) {
-      particles.push(new Particle());
+      particles.push(new Particle(canvas));
     }
 
     const animate = () => {
@@ -78,7 +82,10 @@ const GlobalBackground = () => {
           }
         }
       }
-      particles.forEach(p => { p.update(); p.draw(); });
+      particles.forEach((p) => {
+        p.update();
+        p.draw(ctx);
+      });
       animationId = requestAnimationFrame(animate);
     };
     animate();
